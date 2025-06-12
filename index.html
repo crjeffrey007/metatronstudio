@@ -74,6 +74,30 @@
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#portafolio">Portafolio</a></li>
           <li><a href="#contacto" class="purchase scrool">Contacto</a></li>
+
+          <!-- Banderas -->
+         <!-- Banderas de idioma -->
+<li>
+  <a href="#" onclick="cambiarIdioma('es')" title="Español">
+    <img src="images/flag-cr.png" alt="Español" style="height: 16px;">
+  </a>
+</li>
+<li>
+  <a href="#" onclick="cambiarIdioma('br')" title="Português">
+    <img src="images/flag-br.png" alt="Português" style="height: 16px;">
+  </a>
+</li>
+
+          <!-- Redes sociales -->
+          <li>
+            <a href="#" class="social-icon"><i class="icon icon-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social-icon"><i class="icon icon-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social-icon"><i class="icon icon-linkedin"></i></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -657,5 +681,14 @@ Creamos plataformas digitales que destacan: desde páginas web impresionantes ha
       navbar.classList.remove('shrink');
     }
   });
-</script>    
+</script> 
+<script>
+  function cambiarIdioma(idioma) {
+    if (idioma === 'br') {
+      window.location.href = '/br';
+    } else {
+      window.location.href = '/';
+    }
+  }
+</script>
 </body></html>
