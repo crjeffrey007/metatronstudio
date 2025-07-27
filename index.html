@@ -417,7 +417,7 @@
                         <!--begin popup image -->
                         <div class="popup-wrapper">
                             <div class="popup-gallery">
-                                <a href="#"><img src="http://placehold.it/800x550" class="width-100" alt="pic"><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
+                                <a href="#"><img src="images/web-01.png" class="width-100" alt="pic"><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
                             </div>
                         </div>
                         <!--begin popup image -->
@@ -425,7 +425,7 @@
                         <!--begin blog-item_inner -->
                         <div class="blog-item-inner">
                         
-                            <h3 class="blog-title"><a href="#">Hotel D'Luciat</a></h3>
+                            <h3 class="blog-title"><a href="#">Hotel D'Lucia</a></h3>
                             
                             <p>Quis autem velis etis reprehender etims quiste voluptate velite esse quam nihil etsa illum sedit consequatur quias quiste varias netsum.</p>
                                         
@@ -735,44 +735,9 @@
       window.location.href = '/en';
     }
   });
-<!-- Script para envío con Brevo -->
-<script>
-  async function sendEmail(data) {
-    await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": "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"
-      },
-      body: JSON.stringify({
-        sender: { email: "info@metatronstudio.com", name: "Metatron Studio" },
-        to: [{ email: "crjeffrey7@gmail.com", name: "Administrador" }],
-        subject: document.getElementById("subject").value,
-        htmlContent: `
-          <p><strong>Nombre:</strong> ${data.name}</p>
-          <p><strong>Email:</strong> ${data.email}</p>
-          <p><strong>Teléfono:</strong> ${data.phone}</p>
-          <p><strong>Mensaje:</strong> ${data.message}</p>
-        `
-      })
-    });
-  }
-
-  document.getElementById("contact-form").addEventListener("submit", async function (event) {
-    event.preventDefault();
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      message: document.getElementById("message").value
-    };
-    await sendEmail(formData);
-    document.getElementById("contact-form").reset();
-    document.getElementById("mensaje-exito").style.display = "block";
-  });
-</script>
 <!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/50600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
   <i class="fab fa-whatsapp whatsapp-icon"></i>
 </a>
-</body></html>
+</body>
+</html>
