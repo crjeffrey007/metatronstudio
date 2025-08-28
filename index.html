@@ -1,877 +1,675 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="desarrollo web, ecommerce, marketing digital, plataformas de pago, metatron studio" />
+  <meta name="description" content="Metatron Studio: Desarrollo Web, Marketing, E-commerce, Plataformas de Pago y Negocios Digitales." />
+  <title>Metatron Studio - Desarrollo Web, Marketing, E-commerce, Plataformas de Pago y Negocios Digitales</title>
 
-    <title>Metatron Studio - Desarrollo Web, Marketing, E-commerce,Plataformas de Pago y Negocios Digitales</title>
-    
-    <!-- Loading Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- CSS base -->
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/style-magnific-popup.css" rel="stylesheet" />
+  <link href="css/fonts.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico" />
 
-    <!-- Loading Template CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style-magnific-popup.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">    
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+  <!-- Estilos mínimos extra -->
+  <style>
+    /* Navbar shrink */
+    .navbar .logo-img { height: 48px; transition: transform .2s ease, height .2s ease; }
+    .navbar.shrink .logo-img { height: 40px; transform: translateY(-2px); }
 
-    <!-- Font Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    /* Hero */
+    .home-wrapper { position: relative; height: 100vh; background: url('images/banner-hero.jpg') center/cover no-repeat fixed; }
+    .home-wrapper .gradient_overlay { position:absolute; inset:0; background:rgba(0,0,0,.6); }
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    
-    <!--headerIncludes-->
-    
+    /* WhatsApp flotante */
+    .whatsapp-float {
+      position: fixed; right: 18px; bottom: 18px; width: 56px; height: 56px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #25D366; color: #fff; border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      z-index: 9999; text-decoration: none;
+    }
+    .whatsapp-float:hover { opacity:.9; }
+    .whatsapp-icon { font-size: 28px; line-height: 1; }
+
+    /* Accesibilidad imágenes genéricas */
+    img.width-100 { width: 100%; height: auto; display:block; }
+
+    /* Separadores (si tu theme no los carga, estos aseguran alineación) */
+    .separator_wrapper { margin: 10px auto 20px; }
+  </style>
 </head>
 <body>
-    
-    <!--begin loader -->
-    <div id="loader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="sk-three-bounce">
+      <div class="sk-child sk-bounce1"></div>
+      <div class="sk-child sk-bounce2"></div>
+      <div class="sk-child sk-bounce3"></div>
     </div>
-    <!--end loader -->
-    
-    <!--begin header -->
-<header class="header">
-  <!--begin nav -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <!-- LOGO -->
-        <a href="index.html" class="navbar-brand brand scrool" style="display: flex; align-items: center;">
-          <img src="images/logo-metatron.png" alt="Logo Metatron" class="logo-img">
-        </a>
-      </div>
-
-      <div id="navbar-collapse-02" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-metatron">Sobre Metatron</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#portafolio">Portafolio</a></li>
-          <li><a href="#contacto" class="purchase scrool">Contacto</a></li>
-
-          <!-- Banderas -->
-         <!-- Banderas de idioma -->
-<li>
-  <a href="#" onclick="cambiarIdioma('es')" title="Español">
-    <img src="images/flag-cr.png" alt="Español" style="height: 16px;">
-  </a>
-</li>
-<li>
-  <a href="#" onclick="cambiarIdioma('en')" title="English">
-    <img src="images/flag-en.png" alt="English" style="height: 16px;">
-  </a>
-</li>
-<li>
-  <a href="#" onclick="cambiarIdioma('br')" title="Português">
-    <img src="images/flag-br.png" alt="Português" style="height: 16px;">
-  </a>
-</li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-<!--end header -->
-    
-<!--begin home_wrapper -->
-<section id="inicio" class="home-wrapper" style="background: url('images/banner-hero.jpg') center center no-repeat; background-size: cover; background-attachment: fixed; padding: 0; position: relative; overflow: hidden; z-index: 100; height: 100vh;">
-
-  <!--begin gradient_overlay -->
-  <div class="gradient_overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1;"></div>
-  <!--end gradient_overlay -->
-
-  <!--begin container-->
-  <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; color: white;">
-
-    <h1 class="home-title wow fadeIn" data-wow-delay="0.5s" style="color: white;">
-      Desarrollo Web, Marketing, E-commerce,<br>Plataformas de Pago y Negocios Digitales
-    </h1>
-
-    <p class="home-subtitle wow fadeIn" data-wow-delay="1s" style="color: white; max-width: 800px; margin: 20px auto;">
-      Su negocio merece un sitio web profesional, moderno y optimizado para generar ventas.<br>
-      Creamos plataformas digitales que destacan: páginas web, tiendas online, apps, sistemas de pago y marketing digital.
-    </p>
-
-    <div class="wow fadeIn" data-wow-delay="1.5s" style="margin-top: 20px;">
-      <a href="#servicios" class="btn btn-lg btn-blue scrool">Conozca Nuestros Servicios</a>
-      <a href="#contacto" class="btn btn-lg btn-white scrool" style="margin-left: 10px;">Solicitar Propuesta Personalizada</a>
-    </div>
-
-    <!-- Redes Sociales -->
-    <ul class="list-inline wow fadeIn" data-wow-delay="1.75s" style="margin-top: 30px;">
-      <li class="list-inline-item">
-        <a href="#" class="social-icon" aria-label="Facebook">
-          <i class="icon icon-facebook" style="font-size: 20px; color: white;"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#" class="social-icon" aria-label="Instagram">
-          <i class="icon icon-instagram" style="font-size: 20px; color: white;"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#" class="social-icon" aria-label="LinkedIn">
-          <i class="icon icon-linkedin" style="font-size: 20px; color: white;"></i>
-        </a>
-      </li>
-    </ul>
-
   </div>
-  <!--end container-->
 
-</section>
-<!--end home_wrapper -->
-    
-    <!--begin features-->
-    <section id="sobre-metatron">
-    
-      <!--begin section-white-->
-      <div class="section-white small-padding-bottom"> 
-          
-          <!--begin container-->
-          <div class="container"> 
-    
-                <!--begin row-->
-                <div class="row margin-bottom-30">
-                
-                    <!--begin col-md-12-->
-                    <div class="col-md-12 text-center">
-                        <h3 class="section-title">Sobre Metatron</h3>
-                        
-                        <div class="separator_wrapper">
-                            <i class="icon icon-star-two red"></i>
-                        </div>
-                
-                        <p class="section-subtitle"><strong>Desarrollo Web, Marketing, E-commerce, Plataformas de Pago y Negocios Digitales</strong></p>
-                        <p class="section-subtitle">Somos una agencia digital internacional especializada en soluciones tecnológicas para empresas de todos los sectores. Desarrollamos sitios web profesionales, tiendas online, plataformas de pago personalizadas, paneles de administración, apps móviles, y gestionamos redes sociales con campañas publicitarias efectivas (Ads). Hemos tenido la experiencia de trabajar con clientes en Estados Unidos, Colombia, Brasil, Costa Rica y Chile, ofreciendo tecnología escalable, diseño innovador y resultados medibles.</p>                    </div>
-                    <!--end col-md-12-->
-                
-                </div>
-                <!--end row-->
-                
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button" aria-label="Abrir navegación">
+            <span class="sr-only">Abrir navegación</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+
+          <a href="#inicio" class="navbar-brand brand scrool" style="display:flex;align-items:center">
+            <img src="images/logo-metatron.png" alt="Metatron Studio" class="logo-img">
+          </a>
+        </div>
+
+        <div id="navbar-collapse-02" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-metatron">Sobre Metatron</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#contacto" class="purchase scrool">Contacto</a></li>
+            <!-- Idiomas -->
+            <li><a href="#" onclick="cambiarIdioma('es')" title="Español"><img src="images/flag-cr.png" alt="Español" style="height:16px"></a></li>
+            <li><a href="#" onclick="cambiarIdioma('en')" title="English"><img src="images/flag-en.png" alt="English" style="height:16px"></a></li>
+            <li><a href="#" onclick="cambiarIdioma('br')" title="Português"><img src="images/flag-br.png" alt="Português" style="height:16px"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="home-wrapper">
+    <div class="gradient_overlay"></div>
+    <div class="container" style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;">
+      <h1 class="home-title wow fadeIn" data-wow-delay="0.5s">
+        Desarrollo Web, Marketing, E-commerce,<br>Plataformas de Pago y Negocios Digitales
+      </h1>
+      <p class="home-subtitle wow fadeIn" data-wow-delay="1s" style="max-width:800px;margin:20px auto;">
+        Su negocio merece un sitio web profesional, moderno y optimizado para convertir.<br>
+        Creamos plataformas que destacan: páginas web, tiendas online, apps, sistemas de pago y marketing digital.
+      </p>
+      <div class="wow fadeIn" data-wow-delay="1.5s" style="margin-top:20px;">
+        <a href="#servicios" class="btn btn-lg btn-blue scrool">Conozca Nuestros Servicios</a>
+        <a href="#contacto" class="btn btn-lg btn-white scrool" style="margin-left:10px;">Solicitar Propuesta</a>
+      </div>
+      <ul class="list-inline wow fadeIn" data-wow-delay="1.75s" style="margin-top:30px;">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="font-size:20px;color:#fff"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram" style="font-size:20px;color:#fff"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" style="font-size:20px;color:#fff"></i></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sobre Metatron -->
+  <section id="sobre-metatron">
+    <div class="section-white small-padding-bottom">
+      <div class="container">
+        <div class="row margin-bottom-30">
+          <div class="col-md-12 text-center">
+            <h3 class="section-title">Sobre Metatron</h3>
+            <div class="separator_wrapper"><i class="icon icon-star-two red" aria-hidden="true"></i></div>
+            <p class="section-subtitle"><strong>Desarrollo Web, Marketing, E-commerce, Plataformas de Pago y Negocios Digitales</strong></p>
+            <p class="section-subtitle">
+              Somos una agencia digital internacional. Desarrollamos sitios web profesionales, tiendas online, plataformas de pago personalizadas,
+              paneles de administración, apps móviles y gestionamos redes sociales con campañas publicitarias efectivas (Ads). Hemos trabajado con clientes en
+              Estados Unidos, Colombia, Brasil, Costa Rica y Chile, ofreciendo tecnología escalable, diseño innovador y resultados medibles.
+            </p>
           </div>
-          <!--end container-->
-                
+        </div>
       </div>
-      <!--end section-white-->
-      
-    </section>
-    <!--end features-->
-    
-    <!--begin section-grey -->
-    <section class="section-grey">
-        
-        <!--begin container-->
-        <div class="container">
-
-            <!--begin row-->
-            <div class="row">
-            
-                <!--begin col-md-6-->
-                <div class="col-md-6">
-                
-                    <img src="http://placehold.it/800x660" class="width-100" alt="imac">
-                       
-                </div>
-                <!--end col-sm-6-->
-                
-                <!--begin col-md-6-->
-                <div class="col-md-6 margin-top-10 margin-bottom-30">
-                
-                    <h3 class="medium-title">Design &amp; style should always work toward making you feel good.</h3>
-                    
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi nesciunt. Neque et poris ratione sequi enim ipsam voluptatem quia volupti tempor ante netsum quia magni.</p>
-                    
-                    <ul class="features-list-dark">
-                        <li><i class="icon icon-check-mark blue"></i> Netsum est, qui ipsum quiaim netsum sequi net tempor.</li>
-                        <li><i class="icon icon-check-mark blue"></i> Etiam tempor ante acu ipsum finibus, atimus urnas.</li>
-                        <li><i class="icon icon-check-mark blue"></i> Atimus urnas netsudat, qui ipsum quiaim netsum.</li>
-                        <li><i class="icon icon-check-mark blue"></i> Etiam tempor ante acum ipsum et finibus.</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-lg btn-blue small">Discover More</a>
-                    
-                </div>
-                <!--end col-sm-6-->
-            
-            </div>
-            <!--end row-->
-    
-        </div>
-        <!--end container-->
-    
-    </section>
-    <!--end section-grey-->
-    
-    <!--begin features-->
-    <section id="servicios">
-    
-      <!--begin section-white-->
-      <div class="section-white small-padding-bottom"> 
-          
-          <!--begin container-->
-          <div class="container"> 
-    
-                <!--begin row-->
-                <div class="row margin-bottom-30">
-                
-                    <!--begin col-md-12-->
-                    <div class="col-md-12 text-center">
-                        <h3 class="section-title">Servicios</h3>
-                        
-                        <div class="separator_wrapper">
-                            <i class="icon icon-star-two red"></i>
-                        </div>
-                
-                    </div>
-                    <!--end col-md-12-->
-                
-                </div>
-                <!--end row-->
-                
-  <!--begin row-->
-<div class="row">
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-laptop-code fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Desarrollo Web</h3>
-        <p>Creamos sitios corporativos, blogs y páginas personalizadas con enfoque en diseño, velocidad y SEO.</p>
     </div>
+  </section>
 
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-shopping-cart fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Tiendas Online</h3>
-        <p>Diseño y desarrollo de e-commerce con carrito, pagos integrados y gestión de productos.</p>
-    </div>
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-mobile-alt fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Aplicaciones Móviles</h3>
-        <p>Apps para iOS, Android y Web Apps con excelente usabilidad y rendimiento.</p>
-    </div>
-
-</div>
-
-<br>
-
-<div class="row">
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-chart-line fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Paneles de Administración</h3>
-        <p>Dashboards personalizados para controlar ventas, reservas, inventario y más.</p>
-    </div>
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-credit-card fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Plataformas de Pago</h3>
-        <p>Procesamiento de pagos online para todo tipo de negocios, con métodos adaptados a cada país y cliente: tarjetas de crédito, transferencias digitales, pagos instantáneos y más.</p>
-    </div>
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-calendar-check fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Reservas y Agendamiento</h3>
-        <p>Sistemas de citas online y reservas turísticas conectadas a PMS y motores de booking.</p>
-    </div>
-
-</div>
-
-<br>
-
-<div class="row">
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-thumbs-up fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Redes Sociales</h3>
-        <p>Gestión profesional de Instagram, Facebook y TikTok. Diseño, publicaciones y comunidad.</p>
-    </div>
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-bullhorn fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>Publicidad Digital</h3>
-        <p>Campañas publicitarias en Google Ads, Facebook e Instagram con resultados reales.</p>
-    </div>
-
-    <div class="col-sm-4 features-item">
-        <div class="icon-wrapper">
-            <i class="fas fa-search fa-2x" style="color: #34b1c4;"></i>
-        </div>
-        <h3>SEO y Hosting</h3>
-        <p>Webs optimizadas para buscadores, alojadas en servidores rápidos con soporte técnico 24/7.</p>
-    </div>
-
-</div>
-<!--end row-->
-      
-    </section>
-    <!--end features-->
-    
-    <!--begin image-section -->
-    <section class="image-section">
-    
-        <!--begin image-overlay -->
-        <div class="image-overlay"></div>
-        <!--end image-overlay -->
-            
-        <!--begin container-->
-        <div class="container image-section-inside">
-
-            <!--begin row-->
-            <div class="row">
-            
-                <!--begin col-md-6-->
-                <div class="col-md-10 col-md-offset-1 text-center margin-top-110 margin-bottom-140">
-                
-                    <h2 class="large-title white">Seen enough? Let's get started.</h2>
-                
-                    <p class="section-subtitle white">No Fixed Contract. No Installation Required. Trusted &amp; Secure.</p>
-                    
-                    <a href="#pricing" class="btn btn-lg btn-blue margin-top-20 scrool">TRY IT FOR FREE!</a>
-                    
-                </div>
-                <!--end col-md-6-->
-            
-            </div>
-            <!--end row-->
-            
-        </div>
-        <!--end container-->    
-        
-    </section>
-    <!--end image-section -->
-    
-    <!--begin blog -->
-<section class="section-white" id="blog">
-    <!--begin container-->
+  <!-- Sección gris -->
+  <section class="section-grey">
     <div class="container">
-
-        <!--begin row-->
-        <div class="row margin-bottom-50">
-            <div class="col-md-10 col-md-offset-1 text-center">
-                <h2 class="section-title">Portafolio</h2>
-                <div class="separator_wrapper">
-                    <i class="icon icon-star-two blue"></i>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-6"><img src="images/equipo-trabajo.jpg" class="width-100" alt="Equipo de trabajo de Metatron Studio"></div>
+        <div class="col-md-6 margin-top-10 margin-bottom-30">
+          <h3 class="medium-title">El diseño y la tecnología deben impulsar su negocio.</h3>
+          <p>Combinamos innovación, estrategia y desarrollo para lograr resultados reales y medibles.</p>
+          <ul class="features-list-dark">
+            <li><i class="icon icon-check-mark blue" aria-hidden="true"></i> Soluciones digitales a la medida.</li>
+            <li><i class="icon icon-check-mark blue" aria-hidden="true"></i> Estrategias de marketing efectivas.</li>
+            <li><i class="icon icon-check-mark blue" aria-hidden="true"></i> Plataformas escalables y seguras.</li>
+          </ul>
+          <a href="#contacto" class="btn btn-lg btn-blue small">Descubrir más</a>
         </div>
-        <!--end row-->
+      </div>
+    </div>
+  </section>
 
-        <!--begin row-->
+  <!-- Servicios -->
+  <section id="servicios">
+    <div class="section-white small-padding-bottom">
+      <div class="container">
+        <div class="row margin-bottom-30">
+          <div class="col-md-12 text-center">
+            <h3 class="section-title">Servicios</h3>
+            <div class="separator_wrapper"><i class="icon icon-star-two red" aria-hidden="true"></i></div>
+          </div>
+        </div>
+
         <div class="row">
-
-            <!-- Proyecto 1 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.hoteldlucia.com/" target="_blank">
-                                <img src="images/web-01.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.hoteldlucia.com/" target="_blank">Hotel D'Lucia</a></h3>
-                        <p>Sitio Web de Hotel en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 2 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.abcconsulting-cr.com/" target="_blank">
-                                <img src="images/web-04.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.abcconsulting-cr.com/" target="_blank">ABC Consulting Group</a></h3>
-                        <p>Sitio Web de Abogado en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 3 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://ddlawyers.com/" target="_blank">
-                                <img src="images/web-06.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://ddlawyers.com/" target="_blank">DD Lawyers - De Prado | De la Osa</a></h3>
-                        <p>Sitio web de grupo de Abogados en USA</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 4 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.grupoardillascostarica.com/" target="_blank">
-                                <img src="images/web-07.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.grupoardillascostarica.com/" target="_blank">Cabañas Las Ardillas</a></h3>
-                        <p>Sitio Web de Cabañas de Alojamiento en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 5 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://evodentalcr.com/" target="_blank">
-                                <img src="images/web-03.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://evodentalcr.com/" target="_blank">Evo Dental</a></h3>
-                        <p>Sitio Web Consultorio Dental Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 6 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://balucr.com/" target="_blank">
-                                <img src="images/web-05.png" class="width-100" alt="">
-                                <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://balucr.com/" target="_blank">Balu CR</a></h3>
-                        <p>Tienda Online de Ropa para Mascotas en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 7 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.alquileres-cr.com/" target="_blank"><img src="images/web-08.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.alquileres-cr.com/" target="_blank">Alquileres CR</a></h3>
-                        <p>Sitio Web moentizado de anuncios en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 8 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.jasoncrocodiletours.com/" target="_blank"><img src="images/web-09.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.jasoncrocodiletours.com/" target="_blank">Jason Crocodile Tours</a></h3>
-                        <p>Sitio Web Turístico de Tours en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 9 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://arenalvacationscr.com/" target="_blank"><img src="images/web-10.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://arenalvacationscr.com/" target="_blank">Arenal Vacations</a></h3>
-                        <p>Sitio web de Servicios Turísticos en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 10 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.claimassistpartners.com/" target="_blank"><img src="images/web-11.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.claimassistpartners.com/" target="_blank">Claim Assist Partners</a></h3>
-                        <p>Sitio web de Servicios en USA</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 11 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://academia.claimassistpartners.com/" target="_blank"><img src="images/web-12.png" class="width-100" alt="Proyecto 11"><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://academia.claimassistpartners.com/" target="_blank">Academia Claim Assist Partners</a></h3>
-                        <p>Sitio Web de Cursos Online para Capacitación</p>
-                    </div>
-                </div>
-            </div>
-
-                        <!-- Proyecto 12 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://plerus.ac.cr/" target="_blank"><img src="images/web-02.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://plerus.ac.cr/" target="_blank">Plerus</a></h3>
-                        <p>Re-diseño Sitio Web de Universidad en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Proyecto 13 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://arenalvacationscr.com/" target="_blank"><img src="images/web-77.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://arenalvacationscr.com/" target="_blank">Arenal Vacations</a></h3>
-                        <p>Sitio web de Servicios Turísticos en Costa Rica</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 14 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://www.claimassistpartners.com/" target="_blank"><img src="images/web-78.png" class="width-100" alt=""><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://www.claimassistpartners.com/" target="_blank">Claim Assist Partners</a></h3>
-                        <p>Sitio web de Servicios en USA</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto 15 -->
-            <div class="col-sm-4">
-                <div class="blog-item">
-                    <div class="popup-wrapper">
-                        <div class="popup-gallery">
-                            <a href="https://academia.claimassistpartners.com/" target="_blank"><img src="images/web-79.png" class="width-100" alt="Proyecto 11"><span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item-inner">
-                        <h3 class="blog-title"><a href="https://academia.claimassistpartners.com/" target="_blank">Confecciones La Caperucita</a></h3>
-                        <p>Sitio Web de Confecciones La Caperucita</p>
-                    </div>
-                </div>
-            </div>
-
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-laptop-code fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Desarrollo Web</h3>
+            <p>Sitios corporativos, blogs y páginas personalizadas con foco en diseño, velocidad y SEO.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-shopping-cart fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Tiendas Online</h3>
+            <p>E-commerce con carrito, pagos integrados y gestión de productos.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-mobile-alt fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Aplicaciones Móviles</h3>
+            <p>Apps iOS/Android y Web Apps con excelente usabilidad.</p>
+          </div>
         </div>
-        <!--end row-->
-    </div>
-    <!--end container-->
-</section>
-<!--end blog -->
-    
- <!--begin contact -->
-<section class="section-dark" id="contacto">
-  <div class="container">
 
-    <!-- Título -->
-    <div class="row margin-bottom-50">
-      <div class="col-md-10 col-md-offset-1 text-center">
-        <h2 class="section-title grey">Contáctanos</h2>
-        <div class="separator_wrapper_white"><i class="icon icon-star-two grey"></i></div>
-        <p class="section-subtitle grey">¿Tienes un proyecto o necesitas ayuda? Escríbenos y te responderemos lo antes posible.</p>
+        <br>
+
+        <div class="row">
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-chart-line fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Paneles de Administración</h3>
+            <p>Dashboards para ventas, reservas, inventario y más.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-credit-card fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Plataformas de Pago</h3>
+            <p>Pagos online: tarjetas, transferencias y métodos locales según país.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-calendar-check fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Reservas y Agendamiento</h3>
+            <p>Citas online y reservas turísticas conectadas a PMS.</p>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-thumbs-up fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Redes Sociales</h3>
+            <p>Gestión profesional de Instagram, Facebook y TikTok.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-bullhorn fa-2x" style="color:#34b1c4"></i></div>
+            <h3>Publicidad Digital</h3>
+            <p>Campañas en Google Ads, Facebook e Instagram.</p>
+          </div>
+          <div class="col-sm-4 features-item">
+            <div class="icon-wrapper"><i class="fas fa-search fa-2x" style="color:#34b1c4"></i></div>
+            <h3>SEO y Hosting</h3>
+            <p>Optimización para buscadores y servidores rápidos con soporte.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Formulario -->
-   <div class="row">
-  <form id="contact-form" class="contact">
-    <div class="col-md-6">
-      <input class="contact-input white-input" name="name" required id="name" placeholder="Nombre completo*" type="text">
-      <input class="contact-input white-input" name="subject" required id="subject" placeholder="Asunto*" type="text">
-    </div>
-
-    <div class="col-md-6">
-      <input class="contact-input white-input" name="email" required id="email" placeholder="Correo electrónico*" type="email">
-      <input class="contact-input white-input" name="phone" required id="phone" placeholder="Teléfono*" type="text">
-    </div>
-
-    <div class="col-md-12">
-      <textarea class="contact-commnent white-input" name="message" rows="3" id="message" placeholder="Tu mensaje..."></textarea>
-    </div>
-
-    <div class="col-md-12 text-center">
-      <input value="Enviar mensaje" class="contact-submit" type="submit">
-      <p id="mensaje-exito" style="display: none; color: #00c48f; margin-top: 15px;">¡Gracias por tu mensaje! Te responderemos pronto.</p>
-    </div>
-  </form>
-</div>
-
-<script>
-  document.getElementById("contact-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    await fetch("https://formsubmit.co/ajax/crjeffrey7@gmail.com", {
-      method: "POST",
-      body: data
-    });
-
-    document.getElementById("mensaje-exito").style.display = "block";
-    form.reset();
-
-    setTimeout(() => {
-      document.getElementById("mensaje-exito").style.display = "none";
-    }, 6000);
-  });
-</script>
-
-<!-- Información adicional -->
-<div class="row text-center" style="margin-top: 40px;">
-  <div class="col-md-12">
-    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; color: white;">
-      <div>
-        <i class="fas fa-phone-alt" style="color: #00c48f; margin-right: 6px;"></i>
-        <span>+506 6000 0000</span>
+  <!-- Portafolio -->
+  <section class="section-white" id="portafolio">
+    <div class="container">
+      <div class="row margin-bottom-50">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <h2 class="section-title">Portafolio</h2>
+          <div class="separator_wrapper"><i class="icon icon-star-two blue" aria-hidden="true"></i></div>
+        </div>
       </div>
-      <div>
-        <i class="fas fa-phone-alt" style="color: #00c48f; margin-right: 6px;"></i>
-        <span>+506 7000 0000</span>
+
+      <div class="row">
+        <!-- Reutilizo todos tus proyectos tal como venían -->
+        <!-- 1 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.hoteldlucia.com/" target="_blank" rel="noopener">
+                  <img src="images/web-01.png" class="width-100" alt="Hotel D'Lucia">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.hoteldlucia.com/" target="_blank" rel="noopener">Hotel D'Lucia</a></h3>
+              <p>Sitio Web de Hotel en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.abcconsulting-cr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-04.png" class="width-100" alt="ABC Consulting Group">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.abcconsulting-cr.com/" target="_blank" rel="noopener">ABC Consulting Group</a></h3>
+              <p>Sitio Web de Abogado en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://ddlawyers.com/" target="_blank" rel="noopener">
+                  <img src="images/web-06.png" class="width-100" alt="DD Lawyers">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://ddlawyers.com/" target="_blank" rel="noopener">DD Lawyers - De Prado | De la Osa</a></h3>
+              <p>Sitio web de grupo de Abogados en USA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.grupoardillascostarica.com/" target="_blank" rel="noopener">
+                  <img src="images/web-07.png" class="width-100" alt="Cabañas Las Ardillas">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.grupoardillascostarica.com/" target="_blank" rel="noopener">Cabañas Las Ardillas</a></h3>
+              <p>Sitio Web de Cabañas de Alojamiento en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://evodentalcr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-03.png" class="width-100" alt="Evo Dental">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://evodentalcr.com/" target="_blank" rel="noopener">Evo Dental</a></h3>
+              <p>Sitio Web Consultorio Dental Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://balucr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-05.png" class="width-100" alt="Balu CR">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://balucr.com/" target="_blank" rel="noopener">Balu CR</a></h3>
+              <p>Tienda Online de Ropa para Mascotas en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.alquileres-cr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-08.png" class="width-100" alt="Alquileres CR">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.alquileres-cr.com/" target="_blank" rel="noopener">Alquileres CR</a></h3>
+              <p>Sitio Web monetizado de anuncios en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.jasoncrocodiletours.com/" target="_blank" rel="noopener">
+                  <img src="images/web-09.png" class="width-100" alt="Jason Crocodile Tours">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.jasoncrocodiletours.com/" target="_blank" rel="noopener">Jason Crocodile Tours</a></h3>
+              <p>Sitio Web Turístico de Tours en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://arenalvacationscr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-10.png" class="width-100" alt="Arenal Vacations">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://arenalvacationscr.com/" target="_blank" rel="noopener">Arenal Vacations</a></h3>
+              <p>Sitio web de Servicios Turísticos en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.claimassistpartners.com/" target="_blank" rel="noopener">
+                  <img src="images/web-11.png" class="width-100" alt="Claim Assist Partners">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.claimassistpartners.com/" target="_blank" rel="noopener">Claim Assist Partners</a></h3>
+              <p>Sitio web de Servicios en USA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://academia.claimassistpartners.com/" target="_blank" rel="noopener">
+                  <img src="images/web-12.png" class="width-100" alt="Academia CAP">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://academia.claimassistpartners.com/" target="_blank" rel="noopener">Academia Claim Assist Partners</a></h3>
+              <p>Sitio Web de Cursos Online para Capacitación</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://plerus.ac.cr/" target="_blank" rel="noopener">
+                  <img src="images/web-02.png" class="width-100" alt="Plerus">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://plerus.ac.cr/" target="_blank" rel="noopener">Plerus</a></h3>
+              <p>Re-diseño Sitio Web de Universidad en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://arenalvacationscr.com/" target="_blank" rel="noopener">
+                  <img src="images/web-77.png" class="width-100" alt="Arenal Vacations proyecto 2">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://arenalvacationscr.com/" target="_blank" rel="noopener">Arenal Vacations</a></h3>
+              <p>Sitio web de Servicios Turísticos en Costa Rica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://www.claimassistpartners.com/" target="_blank" rel="noopener">
+                  <img src="images/web-78.png" class="width-100" alt="Claim Assist Partners 2">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://www.claimassistpartners.com/" target="_blank" rel="noopener">Claim Assist Partners</a></h3>
+              <p>Sitio web de Servicios en USA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="col-sm-4">
+          <div class="blog-item">
+            <div class="popup-wrapper">
+              <div class="popup-gallery">
+                <a href="https://academia.claimassistpartners.com/" target="_blank" rel="noopener">
+                  <img src="images/web-79.png" class="width-100" alt="Confecciones La Caperucita">
+                  <span class="eye-wrapper2"><i class="icon icon-link eye-icon"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-item-inner">
+              <h3 class="blog-title"><a href="https://academia.claimassistpartners.com/" target="_blank" rel="noopener">Confecciones La Caperucita</a></h3>
+              <p>Sitio Web de Confecciones La Caperucita</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="image-section">
+    <div class="image-overlay"></div>
+    <div class="container image-section-inside">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center margin-top-110 margin-bottom-140">
+          <h2 class="large-title white">¿Listo para comenzar?</h2>
+          <p class="section-subtitle white">Sin contratos fijos. Sin instalación. Seguro y confiable.</p>
+          <a href="#contacto" class="btn btn-lg btn-blue margin-top-20 scrool">¡Pruébalo Gratis!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section-dark" id="contacto">
+    <div class="container">
+      <div class="row margin-bottom-50">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <h2 class="section-title grey">Contáctanos</h2>
+          <div class="separator_wrapper_white"><i class="icon icon-star-two grey" aria-hidden="true"></i></div>
+          <p class="section-subtitle grey">¿Tienes un proyecto o necesitas ayuda? Escríbenos y te responderemos lo antes posible.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <form id="contact-form" class="contact" novalidate>
+          <div class="col-md-6">
+            <label for="name" class="sr-only">Nombre</label>
+            <input class="contact-input white-input" name="name" required id="name" placeholder="Nombre completo*" type="text" />
+            <label for="subject" class="sr-only">Asunto</label>
+            <input class="contact-input white-input" name="subject" required id="subject" placeholder="Asunto*" type="text" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="sr-only">Correo</label>
+            <input class="contact-input white-input" name="email" required id="email" placeholder="Correo electrónico*" type="email" />
+            <label for="phone" class="sr-only">Teléfono</label>
+            <input class="contact-input white-input" name="phone" required id="phone" placeholder="Teléfono*" type="text" />
+          </div>
+
+          <div class="col-md-12">
+            <label for="message" class="sr-only">Mensaje</label>
+            <textarea class="contact-commnent white-input" name="message" rows="3" id="message" placeholder="Tu mensaje..."></textarea>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <input value="Enviar mensaje" class="contact-submit" type="submit" />
+            <p id="mensaje-exito" style="display:none;color:#00c48f;margin-top:15px;">¡Gracias por tu mensaje! Te responderemos pronto.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="row text-center" style="margin-top:40px;">
+        <div class="col-md-12">
+          <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;color:white;">
+            <div><i class="fas fa-phone-alt" style="color:#00c48f;margin-right:6px;"></i><span>+506 6000 0000</span></div>
+            <div><i class="fas fa-phone-alt" style="color:#00c48f;margin-right:6px;"></i><span>+506 7000 0000</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="copyright text-center">
+            <p class="footer-logo">
+              <img src="images/logo-metatron.png" alt="Metatron Studio" style="height:40px;">
+            </p>
+            <p>Copyright © 2025. Diseñado &amp; Desarrollado por Metatron Studio</p>
+          </div>
+          <ul class="footer_social">
+            <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-  </div>
-</section>
-<!--end contact -->
-    
-    <!--begin footer -->
-    <div class="footer">
-            
-        <!--begin container -->
-        <div class="container">
-        
-            <!--begin row -->
-            <div class="row">
-            
-                <!--begin col-md-12 -->
-                <div class="col-md-12 text-center">
-                    
-                    <!--begin copyright -->
-<div class="copyright text-center">
-    <p class="footer-logo">
-        <img src="images/logo-metatron.png" alt="Metatron Studio" style="height: 40px; display: inline-block;">
-    </p>
-    <p>Copyright © 2025. Diseñado &amp; Desarrollado por Metatron Studio</p>
-</div>
-<!--end copyright -->
-                                                    
-                    <!--begin footer_social -->
-                    <ul class="footer_social">
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!--end footer_social -->
-                    
-                </div>
-                <!--end col-md-6 -->
-                
-            </div>
-            <!--end row -->
-            
-        </div>
-        <!--end container -->
-                
-    </div>
-    <!--end footer -->
-    
+  <!-- Scripts -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.nav.js"></script>
+  <script src="js/jquery.scrollTo-min.js"></script>
+  <script src="js/SmoothScroll.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/plugins.js"></script>
 
-    <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nav.js"></script>
-    <script src="js/jquery.scrollTo-min.js"></script>
-    <script src="js/SmoothScroll.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/plugins.js"></script>
-    <!-- ⬇️ JavaScript para efecto al hacer scroll -->
-   <script>
+  <!-- Navbar shrink -->
+  <script>
     window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('shrink');
-    } else {
-      navbar.classList.remove('shrink');
-    }
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) { navbar.classList.add('shrink'); }
+      else { navbar.classList.remove('shrink'); }
     });
-  </script>    
-<!-- SCRIPT para hacer shrink el logo -->
-<script>
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('shrink');
-    } else {
-      navbar.classList.remove('shrink');
-    }
-  });
-</script> 
-<script>
-  function setIdiomaCookie(idioma) {
-    const dias = 30;
-    const fecha = new Date();
-    fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
-    document.cookie = "idiomaSeleccionado=" + idioma + ";expires=" + fecha.toUTCString() + ";path=/";
-  }
+  </script>
 
-  function getIdiomaCookie() {
-    const nombre = "idiomaSeleccionado=";
-    const cookies = document.cookie.split(';');
-    for (let c of cookies) {
-      c = c.trim();
-      if (c.indexOf(nombre) === 0) {
-        return c.substring(nombre.length, c.length);
+  <!-- FormSubmit -->
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      try {
+        await fetch("https://formsubmit.co/ajax/crjeffrey7@gmail.com", {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+        document.getElementById("mensaje-exito").style.display = "block";
+        form.reset();
+        setTimeout(() => { document.getElementById("mensaje-exito").style.display = "none"; }, 6000);
+      } catch (err) {
+        alert("Ocurrió un error al enviar el formulario. Inténtalo de nuevo.");
       }
+    });
+  </script>
+
+  <!-- Selector de idioma (cookie + redirección) -->
+  <script>
+    function setIdiomaCookie(idioma) {
+      const dias = 30, fecha = new Date();
+      fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+      document.cookie = "idiomaSeleccionado=" + idioma + ";expires=" + fecha.toUTCString() + ";path=/";
     }
-    return null;
-  }
-
-  // Redirección manual por bandera
-  function cambiarIdioma(idioma) {
-    setIdiomaCookie(idioma);
-    if (idioma === 'br') {
-      window.location.href = '/br';
-    } else if (idioma === 'en') {
-      window.location.href = '/en';
-    } else {
-      window.location.href = '/';
+    function getIdiomaCookie() {
+      const nombre = "idiomaSeleccionado=";
+      return document.cookie.split(';').map(c=>c.trim()).find(c=>c.indexOf(nombre)===0)?.substring(nombre.length) || null;
     }
-  }
-
-  // Redirección automática al cargar si no hay cookie
-  window.addEventListener('DOMContentLoaded', function () {
-    const path = window.location.pathname;
-    if (path.startsWith('/br') || path.startsWith('/en')) return;
-
-    const idiomaGuardado = getIdiomaCookie();
-    if (idiomaGuardado) return; // Ya se eligió idioma antes
-
-    const idiomaNavegador = navigator.language || navigator.userLanguage;
-
-    if (idiomaNavegador.startsWith('pt')) {
-      setIdiomaCookie('br');
-      window.location.href = '/br';
-    } else if (idiomaNavegador.startsWith('en')) {
-      setIdiomaCookie('en');
-      window.location.href = '/en';
+    function cambiarIdioma(idioma) {
+      setIdiomaCookie(idioma);
+      if (idioma === 'br') window.location.href = '/br';
+      else if (idioma === 'en') window.location.href = '/en';
+      else window.location.href = '/';
     }
-  });
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/50600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp whatsapp-icon"></i>
-</a>
+    window.addEventListener('DOMContentLoaded', function () {
+      const path = window.location.pathname;
+      if (path.startsWith('/br') || path.startsWith('/en')) return;
+      const idiomaGuardado = getIdiomaCookie();
+      if (idiomaGuardado) return;
+      const idiomaNavegador = navigator.language || navigator.userLanguage;
+      if (idiomaNavegador.startsWith('pt')) { setIdiomaCookie('br'); window.location.href = '/br'; }
+      else if (idiomaNavegador.startsWith('en')) { setIdiomaCookie('en'); window.location.href = '/en'; }
+    });
+  </script>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/50600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+  </a>
 </body>
 </html>
-
-
-
-
