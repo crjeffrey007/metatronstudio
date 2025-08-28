@@ -2002,3 +2002,16 @@ p.testimonials-text {
   .whatsapp-icon {
     color: white;
   }
+
+  #sobre-metatron .section-title {
+    text-align: center;
+  }
+
+  #sobre-metatron p {
+    text-align: justify;
+  }
+
+  /* opcional: para que se vea más profesional */
+  #sobre-metatron {
+    padding: 60px 0;
+  }
