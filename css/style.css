@@ -2098,7 +2098,7 @@ p.testimonials-text {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #0a7b55;   /* color del círculo (ajusta aquí) */
+  background: #35b0c3;   /* color del círculo (ajusta aquí) */
   color: #fff;
   font-weight: 700;
   box-shadow: 0 3px 10px rgba(10,123,85,0.12);
@@ -2176,3 +2176,4 @@ p.testimonials-text {
   flex-direction: column;
   justify-content: center; /* centra verticalmente el bloque */
 }
+
