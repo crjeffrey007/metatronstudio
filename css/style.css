@@ -2168,3 +2168,11 @@ p.testimonials-text {
   .feat-text { font-size: 0.96rem; }
   .feat-icon { width: 32px; height: 32px; font-size: 14px; }
 }
+
+
+/* Columna derecha: centrado vertical */
+.col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente el bloque */
+}
