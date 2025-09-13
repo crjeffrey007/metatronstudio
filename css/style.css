@@ -2016,33 +2016,6 @@ p.testimonials-text {
     padding: 60px 0;
   }
 
-/* Fondo gris de la sección */
-.section-grey {
-  background-color: #f8f9fa; /* gris claro */
-}
-
-/* Título */
-.section-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #222;
-}
-
-/* Lista de características */
-.features-list li {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-}
-
-.features-list i {
-  color: #007bff; /* azul elegante */
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
 
 /* Fondo gris de la sección */
 .section-grey {
@@ -2071,3 +2044,4 @@ p.testimonials-text {
   margin-right: 10px;
   font-size: 1.2rem;
 }
+
