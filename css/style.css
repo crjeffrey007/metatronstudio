@@ -2016,32 +2016,155 @@ p.testimonials-text {
     padding: 60px 0;
   }
 
-
-/* Fondo gris de la sección */
+/* ===== Sección gris - layout responsive sin dependencia ===== */
 .section-grey {
-  background-color: #f8f9fa; /* gris claro */
-}
-
-/* Título */
-.section-title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  background-color: #f5f7f9; /* gris claro */
+  padding: 40px 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #222;
 }
 
-/* Lista de características */
-.features-list li {
-  font-size: 1rem;
+/* Contenedor centrado */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout de dos columnas (flex) */
+.section-inner {
+  display: flex;
+  gap: 28px;
+  align-items: stretch; /* hace que ambas columnas tengan la misma altura */
+  flex-wrap: nowrap;
+}
+
+/* Columnas */
+.col { flex: 1 1 50%; min-width: 280px; box-sizing: border-box; }
+
+/* IZQUIERDA: imagen que cubre toda la columna */
+.image-wrap {
+  width: 100%;
+  height: 100%;             /* llenará la altura del contenedor (igual que la columna derecha) */
+  min-height: 340px;        /* altura mínima para buena presencia en desktop */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(18, 36, 60, 0.08);
+  background: #eaeef3;
+}
+
+/* imagen: siempre cover y centered */
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* DERECHA: texto */
+.section-title {
+  font-size: 1.9rem;
+  margin: 0 0 10px;
+  color: #111;
+  line-height: 1.15;
+}
+
+.section-intro {
+  margin: 0 0 18px;
   color: #444;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Lista de features */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.features li {
   display: flex;
   align-items: center;
+  gap: 12px;
+  padding-right: 12px;
 }
 
-.features-list i {
-  color: #007bff; /* azul elegante */
-  margin-right: 10px;
-  font-size: 1.2rem;
+.feat-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0a7b55;   /* color del círculo (ajusta aquí) */
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(10,123,85,0.12);
+  font-size: 16px;
 }
 
+.feat-text {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* CTA: botones */
+.cta-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.btn-primary {
+  background: #0a7b55;      /* verde principal */
+  color: #fff;
+  border: 2px solid rgba(10,123,85,0.95);
+  box-shadow: 0 6px 18px rgba(10,123,85,0.12);
+}
+
+.btn-primary:hover { transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: #0a7b55;
+  border: 2px solid #d9e9e0;
+}
+
+.btn-outline:hover {
+  background: rgba(10,123,85,0.06);
+}
+
+/* ===== Responsive (stack en pantallas pequeñas) ===== */
+@media (max-width: 880px) {
+  .section-inner {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .image-wrap {
+    min-height: 220px; /* altura en móvil */
+  }
+
+  .col { min-width: 0; }
+}
+
+/* Opcional: ajustar punto de quiebre para móviles más pequeños */
+@media (max-width: 420px) {
+  .section-grey { padding: 24px 12px; }
+  .section-title { font-size: 1.5rem; }
+  .feat-text { font-size: 0.96rem; }
+  .feat-icon { width: 32px; height: 32px; font-size: 14px; }
+}
