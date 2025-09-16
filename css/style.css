@@ -2223,7 +2223,7 @@ p.testimonials-text {
   line-height: 1.6;
   font-weight: 700;
   margin: 0 auto 20px;
-  max-width: 900px;
+  max-width: 100%;
 }
 
 .hero-subtitle {
@@ -2253,6 +2253,7 @@ p.testimonials-text {
     font-size: 1.1rem;
   }
 }
+
 
 
 
