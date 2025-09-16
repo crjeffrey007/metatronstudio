@@ -2232,7 +2232,7 @@ p.testimonials-text {
   font-size: 2.0rem;
   line-height: 1.5;
   margin: 0 auto 20px;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 /* Responsividad */
@@ -2253,6 +2253,7 @@ p.testimonials-text {
     font-size: 1.1rem;
   }
 }
+
 
 
 
