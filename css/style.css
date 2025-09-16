@@ -2064,7 +2064,7 @@ p.testimonials-text {
 .section-title {
   font-size: 1.9rem;
   margin: 0 0 10px;
-  color: #fff;
+  color: #333;
   line-height: 1.15;
 }
 
@@ -2215,4 +2215,5 @@ p.testimonials-text {
   font-size: 1.25rem;
   line-height: 1.6;
 }
+
 
