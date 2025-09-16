@@ -2099,14 +2099,14 @@ p.testimonials-text {
   justify-content: center;
   border-radius: 50%;
   background: #35b0c3;   /* color del círculo (ajusta aquí) */
-  color: #fff;
+  color: #333;
   font-weight: 700;
   box-shadow: 0 3px 10px rgba(10,123,85,0.12);
   font-size: 16px;
 }
 
 .feat-text {
-  color: #fff;
+  color: #333;
   font-size: 14px;
 }
 
@@ -2215,3 +2215,4 @@ p.testimonials-text {
   font-size: 1.25rem;
   line-height: 1.6;
 }
+
