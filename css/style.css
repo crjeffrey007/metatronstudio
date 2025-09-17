@@ -2253,17 +2253,3 @@ p.testimonials-text {
     font-size: 1.1rem;
   }
 }
-
-.list-inline li a i {
-  color: #fff;
-  transition: color .3s ease;
-}
-
-.list-inline li a:hover i {
-  color: #34b1c4;
-}
-
-
-
-
-
