@@ -2254,6 +2254,14 @@ p.testimonials-text {
   }
 }
 
+.list-inline li a i {
+  color: #fff;
+  transition: color .3s ease;
+}
+
+.list-inline li a:hover i {
+  color: #34b1c4;
+}
 
 
 
