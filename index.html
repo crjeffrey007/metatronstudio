@@ -717,45 +717,9 @@
   });
 </script>
 
-  <!-- Popup Cotización -->
-<div id="popupCotizacion" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-btn" onclick="cerrarPopup()">&times;</span>
-    <h2>Solicita tu Cotización</h2>
-    <form id="formCotizacion" action="https://formspree.io/f/tu-endpoint" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <input type="text" name="telefono" placeholder="Tu teléfono">
-      <textarea name="mensaje" placeholder="Describe tu proyecto" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</div>
-  <script>
-function abrirPopup() {
-  document.getElementById("popupCotizacion").style.display = "flex";
-}
-
-function cerrarPopup() {
-  document.getElementById("popupCotizacion").style.display = "none";
-}
-</script>
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/50600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
   </a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
