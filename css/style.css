@@ -2361,14 +2361,14 @@ p.testimonials-text {
 
 /* TITULO */
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 4.0rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 /* SUBTITULO */
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -2412,7 +2412,7 @@ p.testimonials-text {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .hero-subtitle {
     font-size: 1rem;
@@ -2422,3 +2422,4 @@ p.testimonials-text {
     padding: 10px 20px;
   }
 }
+
