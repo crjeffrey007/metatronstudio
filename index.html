@@ -82,9 +82,10 @@
             <li><a href="#portafolio">Portafolio</a></li>
             <li><a href="#contacto" class="purchase scrool">Contacto</a></li>
             <!-- Idiomas -->
-            <li><a href="https://metatronstudio.com/" onclick="cambiarIdioma('es')" title="Español"><img src="images/flag-cr.png" alt="Español" style="height:16px"></a></li>
-            <li><a href="https://metatronstudio.com/en.html" onclick="cambiarIdioma('en')" title="English"><img src="images/flag-en.png" alt="English" style="height:16px"></a></li>
-            <li><a href="https://metatronstudio.com/pt.html" onclick="cambiarIdioma('br')" title="Português"><img src="images/flag-br.png" alt="Português" style="height:16px"></a></li>
+            <li><a href="/" onclick="cambiarIdioma('es')" title="Español"><img src="images/flag-cr.png" alt="Español" style="height:16px"></a></li>
+            <li><a href="/en.html" onclick="cambiarIdioma('en')" title="English"><img src="images/flag-en.png" alt="English" style="height:16px"></a></li>
+            <li><a href="/pt.html" onclick="cambiarIdioma('pt')" title="Português"><img src="images/flag-br.png" alt="Português" style="height:16px"></a></li>
+
           </ul>
         </div>
       </div>
@@ -675,33 +676,43 @@
     });
   </script>
 
-  <!-- Selector de idioma (cookie + redirección) -->
-  <script>
-    function setIdiomaCookie(idioma) {
-      const dias = 30, fecha = new Date();
-      fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
-      document.cookie = "idiomaSeleccionado=" + idioma + ";expires=" + fecha.toUTCString() + ";path=/";
+<!-- Selector de idioma (cookie + redirección) -->
+<script>
+  function setIdiomaCookie(idioma) {
+    const dias = 30, fecha = new Date();
+    fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+    document.cookie = "idiomaSeleccionado=" + idioma + ";expires=" + fecha.toUTCString() + ";path=/";
+  }
+
+  function getIdiomaCookie() {
+    const nombre = "idiomaSeleccionado=";
+    return document.cookie.split(';').map(c=>c.trim()).find(c=>c.indexOf(nombre)===0)?.substring(nombre.length) || null;
+  }
+
+  function cambiarIdioma(idioma) {
+    setIdiomaCookie(idioma);
+    if (idioma === 'pt') window.location.href = '/pt.html';
+    else if (idioma === 'en') window.location.href = '/en.html';
+    else window.location.href = '/';
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    const path = window.location.pathname;
+    if (path.endsWith('pt.html') || path.endsWith('en.html')) return;
+
+    const idiomaGuardado = getIdiomaCookie();
+    if (idiomaGuardado) return;
+
+    const idiomaNavegador = navigator.language || navigator.userLanguage;
+    if (idiomaNavegador.startsWith('pt')) {
+      setIdiomaCookie('pt');
+      window.location.href = '/pt.html';
+    } else if (idiomaNavegador.startsWith('en')) {
+      setIdiomaCookie('en');
+      window.location.href = '/en.html';
     }
-    function getIdiomaCookie() {
-      const nombre = "idiomaSeleccionado=";
-      return document.cookie.split(';').map(c=>c.trim()).find(c=>c.indexOf(nombre)===0)?.substring(nombre.length) || null;
-    }
-    function cambiarIdioma(idioma) {
-      setIdiomaCookie(idioma);
-      if (idioma === 'br') window.location.href = '/br';
-      else if (idioma === 'en') window.location.href = '/en';
-      else window.location.href = '/';
-    }
-    window.addEventListener('DOMContentLoaded', function () {
-      const path = window.location.pathname;
-      if (path.startsWith('/br') || path.startsWith('/en')) return;
-      const idiomaGuardado = getIdiomaCookie();
-      if (idiomaGuardado) return;
-      const idiomaNavegador = navigator.language || navigator.userLanguage;
-      if (idiomaNavegador.startsWith('pt')) { setIdiomaCookie('br'); window.location.href = '/br'; }
-      else if (idiomaNavegador.startsWith('en')) { setIdiomaCookie('en'); window.location.href = '/en'; }
-    });
-  </script>
+  });
+</script>
 
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/50600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
@@ -709,6 +720,7 @@
   </a>
 </body>
 </html>
+
 
 
 
