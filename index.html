@@ -93,27 +93,31 @@
   </header>
 
 <!-- Hero -->
-<section id="inicio" class="home-wrapper">
-  <div class="gradient_overlay"></div>
-  <div class="container" style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+<section id="inicio" class="home-wrapper" style="position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;">
+  
+  <!-- Overlay -->
+  <div class="gradient_overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4));pointer-events:none;z-index:1;"></div>
+  
+  <!-- Contenido -->
+  <div class="hero-container" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:900px;margin:0 auto;padding:20px;">
     
-    <h1 class="hero-title wow fadeIn" data-wow-delay="0.5s">
+    <h1 class="hero-title wow fadeIn" data-wow-delay="0.5s" style="font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:20px;line-height:1.3;">
       Desarrollo Web, Marketing, E-commerce,<br>Plataformas de Pago y Negocios Digitales
     </h1>
     
-    <p class="hero-subtitle wow fadeIn" data-wow-delay="1s">
+    <p class="hero-subtitle wow fadeIn" data-wow-delay="1s" style="font-size:1.2rem;color:#f1f1f1;margin-bottom:30px;">
       Su negocio merece un sitio web profesional, moderno y optimizado para convertir.<br>
       Creamos plataformas que destacan: páginas web, tiendas online, apps, sistemas de pago y marketing digital.
     </p>
     
-    <div class="wow fadeIn" data-wow-delay="1.5s" style="margin-top:20px;">
-      <a href="#contacto" class="btn btn-lg btn-white scrool" style="margin-left:10px;">Solicitar Propuesta</a>
+    <div class="hero-btn wow fadeIn" data-wow-delay="1.5s" style="margin-top:10px;">
+      <a href="#contacto" class="btn btn-lg btn-white scrool" style="padding:12px 28px;border-radius:6px;background:#fff;color:#000;font-weight:600;text-decoration:none;transition:all 0.3s ease;">Solicitar Propuesta</a>
     </div>
     
-    <ul class="list-inline wow fadeIn" data-wow-delay="1.75s" style="margin-top:30px;">
-    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="color:#fff;"></i></a></li>
-    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram" style="color:#fff;"></i></a></li>
-    <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" style="color:#fff;"></i></a></li>
+    <ul class="list-inline hero-social wow fadeIn" data-wow-delay="1.75s" style="margin-top:30px;display:flex;gap:15px;justify-content:center;padding:0;">
+      <li style="list-style:none;"><a href="#" aria-label="Facebook" style="color:#fff;font-size:1.4rem;transition:color 0.3s;"><i class="fab fa-facebook-f"></i></a></li>
+      <li style="list-style:none;"><a href="#" aria-label="Instagram" style="color:#fff;font-size:1.4rem;transition:color 0.3s;"><i class="fab fa-instagram"></i></a></li>
+      <li style="list-style:none;"><a href="#" aria-label="LinkedIn" style="color:#fff;font-size:1.4rem;transition:color 0.3s;"><i class="fab fa-linkedin-in"></i></a></li>
     </ul>
     
   </div>
@@ -742,6 +746,7 @@ function cerrarPopup() {
   </a>
 </body>
 </html>
+
 
 
 
