@@ -2362,6 +2362,7 @@ p.testimonials-text {
 /* TITULO */
 .hero-title {
   font-size: 4.0rem;
+  line-height:1.2;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -2385,7 +2386,7 @@ p.testimonials-text {
 }
 
 .btn-white:hover {
-  background: #f4c10f;
+  background: #34b1c4;
   color: #000;
 }
 
@@ -2459,4 +2460,5 @@ p.testimonials-text {
       font-size: 1rem;
     }
   }
+
 
