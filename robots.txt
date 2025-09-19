@@ -1,0 +1,8 @@
+# robots.txt for Metatron Studio
+User-agent: *
+Allow: /
+
+# Sitemaps por idioma
+Sitemap: https://www.metatronstudio.com/sitemap_es.xml
+Sitemap: https://www.metatronstudio.com/en/sitemap_en.xml
+Sitemap: https://www.metatronstudio.com/pt/sitemap_pt.xml
