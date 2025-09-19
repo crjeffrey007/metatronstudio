@@ -2461,4 +2461,15 @@ p.testimonials-text {
     }
   }
 
-
+.fa-phone-alt:before, .fa-phone-flip:before
+Specificity: (0,1,1)
+ {
+    content: "\f879";
+    color: #34b1c4;
+}
+.fa-envelope:before
+Specificity: (0,1,1)
+ {
+    content: "\f0e0";
+    color: #34b1c4;
+}
