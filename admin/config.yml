@@ -1,17 +1,18 @@
 backend:
-  name: git-gateway
-  branch: main # o "master" si tu repo usa master
+  name: github
+  repo: crjeffrey007/metatronstudio   # ejemplo: pepito/mi-blog
+  branch: main
 
-media_folder: "images/uploads" # dónde se guardan las imágenes en el repo
-public_folder: "/images/uploads" # cómo se referencian en el sitio
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
-    label: "Artículos"
+  - name: "blog"
+    label: "Blog"
     folder: "posts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
       - { label: "Contenido", name: "body", widget: "markdown" }
