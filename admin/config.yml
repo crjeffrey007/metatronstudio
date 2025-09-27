@@ -1,17 +1,17 @@
 backend:
   name: git-gateway
-  branch: main   # o master si es tu rama principal
+  branch: main # Cambia a "master" si tu repo usa esa rama
 
-media_folder: "images/uploads"   
-public_folder: "/images/uploads"
+media_folder: "images/uploads"   # Carpeta donde se guardan las imágenes en el repo
+public_folder: "/images/uploads" # Ruta pública de las imágenes
 
 collections:
   - name: "blog"
-    label: "Artículos del Blog"
-    folder: "blog/posts"
+    label: "Blog"
+    folder: "posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}" # usa solo el slug del título
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Imagen destacada", name: "thumbnail", widget: "image", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
