@@ -1,14 +1,14 @@
 backend:
   name: git-gateway
-  branch: main   # Usa la rama principal de tu repo (puede ser master o main)
+  branch: main   # o master si es tu rama principal
 
-media_folder: "images/uploads"   # Carpeta para subir imágenes
+media_folder: "images/uploads"   
 public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
     label: "Artículos del Blog"
-    folder: "posts"
+    folder: "blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
