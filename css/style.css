@@ -2473,3 +2473,41 @@ Specificity: (0,1,1)
     content: "\f0e0";
     color: #34b1c4;
 }
+
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #555;
+      font-size: 0.95em;
+      flex-grow: 1;
+    }
+    .card a {
+      margin-top: 15px;
+      display: inline-block;
+      background: #0077cc;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card a:hover {
+      background: #005fa3;
+    }
