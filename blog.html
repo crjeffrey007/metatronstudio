@@ -149,7 +149,7 @@
           </div>
         </div>
         
-        <div class="grid" id="posts"></div>
+        <div class="grid" id="blog-grid"></div>
           
         </div>
       </div>
@@ -260,32 +260,39 @@
   
 <!-- Blog -->
   <script>
+    // Lista manual de posts (se pueden automatizar luego)
+    const posts = ["hola.md"];
+
     async function cargarPosts() {
-      // ⚡ Carga todos los artículos de la carpeta /posts/
-      const response = await fetch('/posts/');
-      const text = await response.text();
+      const grid = document.getElementById("blog-grid");
 
-      // Extraemos archivos .md (Markdown)
-      const regex = /href="([^"]+\.md)"/g;
-      let match;
-      const posts = [];
+      for (const post of posts) {
+        const resp = await fetch(`posts/${post}`);
+        const text = await resp.text();
 
-      while ((match = regex.exec(text)) !== null) {
-        posts.push(match[1]);
-      }
+        // Extraer metadatos (frontmatter)
+        const match = text.match(/---([\s\S]*?)---/);
+        let title = "Post sin título", date = "", body = "";
+        if (match) {
+          const meta = match[1];
+          const titleMatch = meta.match(/title:\s*\"?(.*)\"?/);
+          const dateMatch = meta.match(/date:\s*(.*)/);
+          if (titleMatch) title = titleMatch[1];
+          if (dateMatch) date = dateMatch[1];
+        }
 
-      // Generamos cards simples
-      const container = document.getElementById('posts');
-      posts.forEach(post => {
-        const slug = post.replace('/posts/', '').replace('.md','');
-        container.innerHTML += `
-          <div class="card">
-            <h2>${slug.replace(/-/g, ' ')}</h2>
-            <p>Descripción breve del artículo.</p>
-            <a href="${post}">Leer más</a>
-          </div>
+        body = text.split("---").pop().substring(0, 150) + "...";
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h2>${title}</h2>
+          <p><em>${date}</em></p>
+          <p>${body}</p>
+          <a href="posts/${post}" target="_blank">Leer más</a>
         `;
-      });
+        grid.appendChild(card);
+      }
     }
 
     cargarPosts();
