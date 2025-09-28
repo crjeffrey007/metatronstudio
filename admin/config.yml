@@ -39,3 +39,4 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
+      
