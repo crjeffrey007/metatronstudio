@@ -2,11 +2,11 @@ backend:
   name: github
   repo: crjeffrey007/metatronstudio
   branch: main
-  auth_scope: "repo"       # Scope permitido por Decap CMS 3.x
+  auth_scope: "repo"
   site_domain: "https://metatronstudio.pages.dev"
 
-media_folder: "static/images/uploads"  # Carpeta en tu repo donde se guardan imágenes
-public_folder: "/images/uploads"       # Ruta pública accesible desde el sitio
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 media_library:
   name: github
@@ -15,12 +15,22 @@ media_library:
     repo: crjeffrey007/metatronstudio
     branch: main
 
-publish_mode: editorial_workflow        # Permite flujo de revisión antes de publicar
+publish_mode: editorial_workflow
 
 collections:
+  - name: pages
+    label: Pages
+    files:
+      - file: "blog/index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
   - name: blog
     label: Blog
-    folder: "content/blog"
+    folder: "blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -29,11 +39,3 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
-
-# Configuración para Cloudflare Access
-# Nota: esto no se aplica directamente en config.yml,
-# pero tu /admin/ estará protegido por Cloudflare Access antes de que el CMS cargue.
-# Debes configurar la app en Cloudflare Access con:
-# - GitHub OAuth Client ID y Client Secret
-# - Policy que permita solo tu usuario GitHub o tu correo Gmail
-# - Dominio protegido: https://metatronstudio.pages.dev/admin/*
