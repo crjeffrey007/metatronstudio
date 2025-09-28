@@ -5,35 +5,19 @@
     <title>Panel de Administración - Metatron CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      #cms-root {
-        width: 100%;
-        height: 100vh;
-      }
+      body { margin: 0; font-family: Arial, sans-serif; }
+      #cms-root { width: 100%; height: 100vh; }
     </style>
   </head>
   <body>
-    <!-- Contenedor del CMS -->
     <div id="cms-root"></div>
 
-    <!-- Carga de Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-    <!-- Inicialización del CMS -->
     <script>
-      // Inicializa el CMS usando el config.yml en la misma ruta
-      CMS.init();
+      // Espera a que el DOM esté cargado
+      document.addEventListener('DOMContentLoaded', function() {
+        CMS.init();
+      });
     </script>
-
-    <!-- Nota sobre Cloudflare Access -->
-    <!--
-      Este panel está protegido por Cloudflare Access.
-      Solo los usuarios autorizados vía Google OAuth o GitHub OAuth pueden acceder.
-      No se requiere login adicional dentro de Decap CMS.
-    -->
   </body>
 </html>
