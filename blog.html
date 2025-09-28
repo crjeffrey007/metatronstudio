@@ -143,19 +143,21 @@
     <div class="container">
       <div class="row margin-bottom-30">
         <div class="col-md-12 text-center">
-          <h2 class="section-title">blog</h2>
+          <h2 class="section-title">Blog</h2>
           <div class="separator_wrapper">
             <i class="icon icon-star-two red" aria-hidden="true"></i>
           </div>
         </div>
-        
-        <div class="grid" id="blog-grid"></div>
-          
-        </div>
+      </div>
+
+      <!-- Grid de artículos del blog -->
+      <div id="blog-grid" class="grid">
+        <!-- Aquí se insertarán los posts dinámicamente -->
       </div>
     </div>
   </div>
 </section>
+
   <!-- Footer -->
   <div class="footer">
     <div class="container">
@@ -258,44 +260,34 @@
   });
 </script>
   
-<!-- Blog -->
+  <!-- Cargar los posts desde posts/ -->
+  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
   <script>
-    // Lista manual de posts (se pueden automatizar luego)
-    const posts = ["hola.md"];
+    async function loadPosts() {
+      const response = await fetch("posts/index.json"); // Genera un índice de tus posts
+      const posts = await response.json();
 
-    async function cargarPosts() {
       const grid = document.getElementById("blog-grid");
+      const converter = new showdown.Converter();
 
-      for (const post of posts) {
-        const resp = await fetch(`posts/${post}`);
-        const text = await resp.text();
-
-        // Extraer metadatos (frontmatter)
-        const match = text.match(/---([\s\S]*?)---/);
-        let title = "Post sin título", date = "", body = "";
-        if (match) {
-          const meta = match[1];
-          const titleMatch = meta.match(/title:\s*\"?(.*)\"?/);
-          const dateMatch = meta.match(/date:\s*(.*)/);
-          if (titleMatch) title = titleMatch[1];
-          if (dateMatch) date = dateMatch[1];
-        }
-
-        body = text.split("---").pop().substring(0, 150) + "...";
-
+      posts.forEach(post => {
         const card = document.createElement("div");
         card.className = "card";
+
         card.innerHTML = `
-          <h2>${title}</h2>
-          <p><em>${date}</em></p>
-          <p>${body}</p>
-          <a href="posts/${post}" target="_blank">Leer más</a>
+          ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}">` : ""}
+          <div class="card-content">
+            <h2>${post.title}</h2>
+            <p>${post.description || ""}</p>
+            <a href="posts/${post.slug}.html">Leer más</a>
+          </div>
         `;
+
         grid.appendChild(card);
-      }
+      });
     }
 
-    cargarPosts();
+    loadPosts();
   </script>
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/5516997152073" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
