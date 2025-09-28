@@ -2,11 +2,33 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Panel de Administración</title>
+    <title>Panel de Administración - Metatron CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Puedes agregar CSS propio si quieres estilo -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #cms-root {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
-    <!-- Decap CMS -->
+    <!-- Contenedor del CMS -->
+    <div id="cms-root"></div>
+
+    <!-- Carga de Decap CMS desde CDN -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Inicialización del CMS -->
+    <script>
+      // Esto inicializa el CMS usando el archivo config.yml en la misma ruta
+      CMS.init();
+    </script>
   </body>
 </html>
+
