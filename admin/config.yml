@@ -1,18 +1,20 @@
 backend:
-  name: git-gateway
-  repo: crjeffrey007/metatronstudio # tu repo de GitHub
+  name: github
+  repo: crjeffrey007/metatronstudio   # 👈 tu repo en GitHub
   branch: main
+  auth_scope: repo
 
-media_folder: "images/uploads"   # dónde se guardan las imágenes
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "posts"
+    label: "Artículos"
     folder: "posts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
+      - { label: "Resumen", name: "description", widget: "text", required: false }
+      - { label: "Imagen destacada", name: "thumbnail", widget: "image", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
-      - { label: "Imagen Destacada", name: "thumbnail", widget: "image", required: false }
