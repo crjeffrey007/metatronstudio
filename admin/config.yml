@@ -1,21 +1,6 @@
 backend:
   name: github
-  repo: crjeffrey007/metatronstudio   # 👈 tu repo en GitHub
-  branch: main
-  auth_scope: repo
-
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-collections:
-  - name: "posts"
-    label: "Artículos"
-    folder: "posts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Resumen", name: "description", widget: "text", required: false }
-      - { label: "Imagen destacada", name: "thumbnail", widget: "image", required: false }
-      - { label: "Contenido", name: "body", widget: "markdown" }
-
+  repo: crjeffrey007/metatronstudio  # tu repo
+  branch: main                        # rama principal
+  auth_scope: "read:user user:email"  # permisos de GitHub
+  site_domain: "https://metatronstudio.pages.dev"
