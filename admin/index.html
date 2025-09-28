@@ -1,23 +1,28 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Panel - Blog</title>
-    </head>
+    <title>Panel de Administración</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
   <body>
-    <!-- Carga Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Cargar Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+
+    <!-- Cargar Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+    <script>
+      // Activar redirección después de login
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
         });
       }
-    });
-  }
-</script>
+    </script>
   </body>
 </html>
