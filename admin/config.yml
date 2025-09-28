@@ -1,10 +1,9 @@
 backend:
   name: github
-  repo: crjeffrey007/metatronstudio   # 👈 tu repo en GitHub
+  repo: crjeffrey007/metatronstudio
   branch: main
-  auth_scope: repo
 
-media_folder: "images/uploads"
+media_folder: "images/uploads"   # Carpeta donde se suben las imágenes
 public_folder: "/images/uploads"
 
 collections:
@@ -15,6 +14,4 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Resumen", name: "description", widget: "text", required: false }
-      - { label: "Imagen destacada", name: "thumbnail", widget: "image", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
