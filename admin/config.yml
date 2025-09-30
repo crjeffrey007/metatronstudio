@@ -1,34 +1,18 @@
 backend:
   name: github
-  repo: crjeffrey007/metatronstudio
+  repo: crjeffrey007/metatronstudio   # ← cambia por TU usuario/repositorio
   branch: main
-  auth_scope: repo
-  site_domain: https://metatronstudio.pages.dev
 
-media_folder: "images/uploads"
+media_folder: "images/uploads"   # dónde se guardan las imágenes en el repo
 public_folder: "/images/uploads"
 
-publish_mode: editorial_workflow
-
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "content/index.md"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "blog"
+  - name: "posts"
     label: "Blog"
-    folder: "blog"
+    folder: "blog/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
