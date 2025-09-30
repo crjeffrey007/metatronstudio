@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: crjeffrey007/metatronstudio   # ← cambia por TU usuario/repositorio
+  repo: crjeffrey007/metatronstudio   # tu repo correcto
   branch: main
-  base_url: https://metatronstudio.com/   # tu dominio en GitHub Pages
-  auth_endpoint: /auth    # lo usaremos para proxy de login
-  
+  base_url: https://metatronstudio.com   # sin la barra al final
+  auth_endpoint: /callback   # usa /callback en vez de /auth
+
 media_folder: "images/uploads"   # dónde se guardan las imágenes en el repo
 public_folder: "/images/uploads"
 
@@ -16,5 +16,5 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Título", name: "title", widget: "string"}
-      - {label: "Fecha", name: "date", widget: "datetime"}
       - {label: "Contenido", name: "body", widget: "markdown"}
+
