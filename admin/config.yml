@@ -2,7 +2,9 @@ backend:
   name: github
   repo: crjeffrey007/metatronstudio   # ← cambia por TU usuario/repositorio
   branch: main
-
+  base_url: https://metatronstudio.com/   # tu dominio en GitHub Pages
+  auth_endpoint: /auth    # lo usaremos para proxy de login
+  
 media_folder: "images/uploads"   # dónde se guardan las imágenes en el repo
 public_folder: "/images/uploads"
 
