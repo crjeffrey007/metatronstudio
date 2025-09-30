@@ -151,7 +151,7 @@
       </div>
 
       <!-- Grid de artículos del blog -->
-      <div id="blog-grid" class="grid">
+      <div id="blog-grid" class="grid"></div>
         <!-- Aquí se insertarán los posts dinámicamente -->
       </div>
     </div>
@@ -261,32 +261,30 @@
 </script>
   
   <!-- Cargar los posts desde posts/ -->
-  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
-  <script>
+   <script>
     async function loadPosts() {
-      const response = await fetch("posts/index.json"); // Genera un índice de tus posts
-      const posts = await response.json();
+      const response = await fetch("https://api.github.com/repos/crjeffrey007/metatronstudio/contents/blog/posts");
+      const files = await response.json();
 
-      const grid = document.getElementById("blog-grid");
-      const converter = new showdown.Converter();
+      let html = "";
+      for (let file of files) {
+        const res = await fetch(file.download_url);
+        const text = await res.text();
 
-      posts.forEach(post => {
-        const card = document.createElement("div");
-        card.className = "card";
+        const title = text.match(/title: "(.*?)"/)[1];
+        const date = text.match(/date: (.*)/)[1];
+        const slug = file.name.replace(".md", ".html");
 
-        card.innerHTML = `
-          ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}">` : ""}
-          <div class="card-content">
-            <h2>${post.title}</h2>
-            <p>${post.description || ""}</p>
-            <a href="posts/${post.slug}.html">Leer más</a>
+        html += `
+          <div class="card">
+            <h2>${title}</h2>
+            <p>${date}</p>
+            <a href="blog/posts/${slug}">Leer más</a>
           </div>
         `;
-
-        grid.appendChild(card);
-      });
+      }
+      document.getElementById("blog-grid").innerHTML = html;
     }
-
     loadPosts();
   </script>
   <!-- WhatsApp flotante -->
