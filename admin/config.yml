@@ -1,11 +1,8 @@
 backend:
-  name: github
-  repo: crjeffrey007/metatronstudio   # tu repo correcto
-  branch: main
-  base_url: https://metatronstudio.com   # sin la barra al final
-  auth_endpoint: /callback   # usa /callback en vez de /auth
+  name: git-gateway
+  branch: main   # o "master", según tu repo
 
-media_folder: "images/uploads"   # dónde se guardan las imágenes en el repo
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
